@@ -3,7 +3,13 @@ const { sassPlugin } = require('esbuild-sass-plugin');
 const fs = require('fs');
 const glob = require('glob');
 
+const tailwindPath = '.tmp/app.css';
 const assets = glob.sync('src/**/*.{svg,png,jpg,woff,woff2,js,scss,ttf}');
+const entryPoints = [
+  tailwindPath,
+  ...assets
+];
+
 
 const manifestPlugin = {
   name: 'generate-manifest',
@@ -34,7 +40,7 @@ const manifestPlugin = {
 
 async function run() {
   const ctx = await esbuild.context({
-    entryPoints: assets,
+    entryPoints: entryPoints,
     bundle: true,
     outdir: 'public/build',
     plugins: [sassPlugin(), manifestPlugin],

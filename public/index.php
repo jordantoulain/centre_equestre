@@ -24,15 +24,16 @@ if(!isset($_ENV['PROD'])){
 <head>
     <meta charset="UTF-8">
     <title>Centre équestre</title>
-    <link rel="stylesheet" href="./build/app.css?v=<?= filemtime(__DIR__ . '/build/app.css') ?>">
+    <link rel="stylesheet" href="<?= asset('.tmp/app.css') ?>">
     <?php if (asset('src/index.js')): ?>
         <script src="<?= asset('src/index.js') ?>" defer></script>
     <?php endif; ?>
 </head>
 <body>
     <div id="app">
-        <h1>Bienvenue au centre équestre</h1>
-        <p>Découvrez nos activités et réservez votre place dès maintenant !</p>
+        <h1 class="text-5xl font-bold text-center mb-4">Bienvenue au centre équestre</h1>
+        <p class="text-7xl text-center">Découvrez nos activités et réservez votre place dès maintenant !</p>
     </div>
+    
 </body>
 </html>
