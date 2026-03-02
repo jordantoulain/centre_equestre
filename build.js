@@ -10,7 +10,7 @@ const entryPoints = [
   ...assets
 ];
 
-const outdir = 'public/build';
+const outdir = 'public/dist';
 
 
 const manifestPlugin = {

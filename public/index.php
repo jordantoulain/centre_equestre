@@ -1,5 +1,5 @@
 <?php
-$manifestPath = __DIR__ . '/build/manifest.json';
+$manifestPath = __DIR__ . '/dist/manifest.json';
 $manifest = [];
 
 if (file_exists($manifestPath)) {
@@ -8,7 +8,7 @@ if (file_exists($manifestPath)) {
 
 function asset(string $entryName) {
     global $manifest;
-    return isset($manifest[$entryName]) ? './build/' . basename($manifest[$entryName]) : '';
+    return isset($manifest[$entryName]) ? './dist/' . basename($manifest[$entryName]) : '';
 }
 
 if(!isset($_ENV['PROD'])){
@@ -34,6 +34,6 @@ if(!isset($_ENV['PROD'])){
         <h1 class="text-5xl font-bold text-center mb-4">Bienvenue au centre équestre</h1>
         <p class="text-7xl text-center">Découvrez nos activités et réservez votre place dès maintenant !</p>
     </div>
-    
+
 </body>
 </html>
