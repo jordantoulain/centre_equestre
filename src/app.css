@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "basecoat-css";
+
+@theme {
+}
+
+body {
+  background-color: #f8fafc;
+}
