@@ -10,6 +10,8 @@ const entryPoints = [
   ...assets
 ];
 
+const outdir = 'public/build';
+
 
 const manifestPlugin = {
   name: 'generate-manifest',
@@ -21,7 +23,7 @@ const manifestPlugin = {
       }
 
       const mapping = {};
-      
+
       Object.keys(result.metafile.outputs).forEach(outputFile => {
         const entry = result.metafile.outputs[outputFile].entryPoint;
         if (entry) {
@@ -30,8 +32,12 @@ const manifestPlugin = {
         }
       });
 
-      fs.writeFileSync('public/build/manifest.json', JSON.stringify(mapping, null, 2));
-      
+      if (!fs.existsSync(outdir)) {
+        fs.mkdirSync(outdir, { recursive: true });
+      }
+
+      fs.writeFileSync(`${outdir}/manifest.json`, JSON.stringify(mapping, null, 2));
+
       const date = new Date().toLocaleTimeString();
       console.log(`[${date}] ⚡ Build mis à jour avec succès !`);
     });
@@ -39,15 +45,20 @@ const manifestPlugin = {
 };
 
 async function run() {
+  if (fs.existsSync(outdir)) {
+    fs.rmSync(outdir, { recursive: true, force: true });
+    console.log('🧹 Dossier build vidé.');
+  }
+
   const ctx = await esbuild.context({
     entryPoints: entryPoints,
     bundle: true,
-    outdir: 'public/build',
+    outdir: outdir,
     plugins: [sassPlugin(), manifestPlugin],
     metafile: true,
     entryNames: '[name]-[hash]',
     minify: true,
-    
+
     loader: {
       '.svg': 'copy',
       '.png': 'copy',
