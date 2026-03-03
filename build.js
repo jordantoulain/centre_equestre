@@ -1,10 +1,9 @@
 const esbuild = require('esbuild');
-const { sassPlugin } = require('esbuild-sass-plugin');
 const fs = require('fs');
 const glob = require('glob');
 
 const tailwindPath = '.tmp/app.css';
-const assets = glob.sync('src/**/*.{svg,png,jpg,woff,woff2,js,scss,ttf}');
+const assets = glob.sync('src/**/*.{svg,png,jpg,woff,woff2,js,ttf}');
 const entryPoints = [
   tailwindPath,
   ...assets
@@ -54,7 +53,7 @@ async function run() {
     entryPoints: entryPoints,
     bundle: true,
     outdir: outdir,
-    plugins: [sassPlugin(), manifestPlugin],
+    plugins: [manifestPlugin],
     metafile: true,
     entryNames: '[name]-[hash]',
     minify: true,
