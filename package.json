@@ -18,7 +18,6 @@
     "dev:css": "tailwindcss -i ./src/app.css -o ./.tmp/app.css --watch",
     "dev:js": "node build.js --watch",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:js\"",
-    
     "build:css": "tailwindcss -i ./src/app.css -o ./.tmp/app.css --minify",
     "build:js": "node build.js",
     "build": "npm run build:css && npm run build:js"
