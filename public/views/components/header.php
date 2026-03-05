@@ -33,4 +33,5 @@
 <body class="flex flex-col min-h-screen w-screen h-screen">
 <?php
     include "$root/views/components/navbar.php";
+    include "$root/views/components/breadcrumb.php";
 ?>

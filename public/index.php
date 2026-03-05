@@ -25,6 +25,8 @@ if (isset($_GET["p"])){
 }else{
     $action = "home";
 }
+
+$breadcrumbs = getBreadcrumbs($action);
 $fichier = controleurPrincipal($action);
 include "$root/controllers/$fichier";
 
