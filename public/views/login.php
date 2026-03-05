@@ -14,11 +14,12 @@
         <a href="./?p=register" class="cursor-pointer text-center text-sm">Créer un compte</a>
     </form>
     <?php if (isset($error)) { ?>
-        <article class="group/item flex items-center border border-red-400 text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] p-4 mt-10 gap-4">
-            <div class="flex flex-1 flex-col gap-1">
-                <h3 class="flex w-fit text-red-400 items-center gap-2 text-sm leading-snug font-medium">Erreur de connexion</h3>
-                <p class="text-muted-foreground line-clamp-2 text-sm leading-normal font-normal text-balance [&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4">Mot de passe ou nom d'utilisateur incorrect.</p>
-            </div>
-        </article>
+        <div class="alert-destructive w-2/3 max-w-100 mx-auto mt-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="8" y2="12" /><line x1="12" x2="12.01" y1="16" y2="16" /></svg>
+            <h2>Erreur de connexion</h2>
+            <section>
+                Veuillez vérifier vos informations de connexion et réessayer.
+            </section>
+        </div>
     <?php } ?>
 </section>
