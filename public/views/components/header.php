@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centre équestre</title>
+    <?php if ($isDev): ?>
+        <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <?php endif; ?>
     <script>
     (() => {
         try {
@@ -27,8 +30,8 @@
         });
     })();
     </script>
-    <link rel="stylesheet" href="<?= asset('.tmp/app.css') ?>">
-    <script src="<?= asset('src/index.js') ?>" defer></script>
+    <link rel="stylesheet" href="<?= asset('src/app.css') ?>">
+    <script type="module" src="<?= asset('src/index.js') ?>" defer></script>
 </head>
 <body class="flex flex-col min-h-screen w-screen h-screen">
 <?php

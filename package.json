@@ -15,19 +15,13 @@
   "type": "commonjs",
   "main": "build.js",
   "scripts": {
-    "dev:css": "tailwindcss -i ./src/app.css -o ./.tmp/app.css --watch",
-    "dev:js": "node build.js --watch",
-    "dev": "concurrently \"npm run dev:css\" \"npm run dev:js\"",
-    "build:css": "tailwindcss -i ./src/app.css -o ./.tmp/app.css --minify",
-    "build:js": "node build.js",
-    "build": "npm run build:css && npm run build:js"
+    "dev": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.2.1",
-    "concurrently": "^9.2.1",
-    "esbuild": "^0.27.3",
-    "glob": "^13.0.6",
-    "tailwindcss": "^4.2.1"
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1"
   },
   "dependencies": {
     "basecoat-css": "^0.3.11"
