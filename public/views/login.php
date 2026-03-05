@@ -11,6 +11,6 @@
         </div>
 
         <button type="submit" class="btn">Se connecter</button>
-        <a href="#" class="cursor-pointer text-center text-sm">Créer un compte</a>
+        <a href="./?p=register" class="cursor-pointer text-center text-sm">Créer un compte</a>
     </form>
 </section>
