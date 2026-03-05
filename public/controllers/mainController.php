@@ -1,4 +1,11 @@
 <?php
+function returnIfLoggedIn(){
+    if (isset($_SESSION['username'])){
+        header("Location: ?p=home");
+        exit;
+    }
+}
+
 function getBreadcrumbs($action){
     $breadcrumbs = [
         "home" => ["Accueil"],
@@ -9,16 +16,17 @@ function getBreadcrumbs($action){
 }
 
 function getControllers(){
-    return [
+    $actions = [
         "home" => "homeController.php",
         "login" => "loginController.php",
-        "register" => "registerController.php"
+        "register" => "registerController.php",
+        "logout" => "logoutController.php"
     ];
+    return $actions;
 }
 
-function controleurPrincipal($calledAction){
+function controleurPrincipal($action){
 
-    $action = $calledAction;
     $controllers = getControllers();
 
     if (array_key_exists ( $action , $controllers )){
