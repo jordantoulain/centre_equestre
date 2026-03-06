@@ -3,8 +3,8 @@
         <svg class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#ffffff" fill-rule="evenodd" d="M3.5 5a1 1 0 0 0 0 2h17a1 1 0 1 0 0-2h-17Zm-1 7a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2h-17a1 1 0 0 1-1-1Zm0 6.001a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2h-17a1 1 0 0 1-1-1Z" clip-rule="evenodd"/></svg>
         <svg class="block dark:hidden" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#000000" fill-rule="evenodd" d="M3.5 5a1 1 0 0 0 0 2h17a1 1 0 1 0 0-2h-17Zm-1 7a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2h-17a1 1 0 0 1-1-1Zm0 6.001a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2h-17a1 1 0 0 1-1-1Z" clip-rule="evenodd"/></svg>
     </button>
-    <div class="gap-2 hidden sm:flex">
-        <a href="./?p=home" class="btn-ghost">
+    <div class="gap-5 hidden sm:flex">
+        <a href="./?p=home" class="btn-ghost size-12 w-auto">
             <svg class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
                 <g clip-path="url(#clip0_4418_8583)">
                 <path d="M20.86 8.36985L13.93 2.82985C12.86 1.96985 11.13 1.96985 10.07 2.81985L3.14002 8.36985C2.36002 8.98985 1.86002 10.2998 2.03002 11.2798L3.36002 19.2398C3.60002 20.6598 4.96002 21.8098 6.40002 21.8098H17.6C19.03 21.8098 20.4 20.6498 20.64 19.2398L21.97 11.2798C22.13 10.2998 21.63 8.98985 20.86 8.36985ZM12 15.4998C10.62 15.4998 9.50002 14.3798 9.50002 12.9998C9.50002 11.6198 10.62 10.4998 12 10.4998C13.38 10.4998 14.5 11.6198 14.5 12.9998C14.5 14.3798 13.38 15.4998 12 15.4998Z" fill="white" style="fill: var(--fillg);"/>
@@ -27,7 +27,7 @@
             </svg>
             <span>Accueil</span>
         </a>
-        <a href="#" class="btn-ghost">
+        <a href="#" class="btn-ghost size-12 w-auto">
             <svg class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
                 <g clip-path="url(#clip0_4418_8478)">
                 <path d="M14.9301 2.5V8.4C14.9301 8.84 14.4101 9.06 14.0901 8.77L12.3401 7.16C12.1501 6.98 11.8501 6.98 11.6601 7.16L9.91007 8.76C9.59007 9.06 9.07007 8.83 9.07007 8.4V2.5C9.07007 2.22 9.29007 2 9.57007 2H14.4301C14.7101 2 14.9301 2.22 14.9301 2.5Z" fill="white" style="fill: var(--fillg);"/>
@@ -52,7 +52,7 @@
             </svg>
             <span>Présentation</span>
         </a>
-        <a href="#" class="btn-ghost">
+        <a href="#" class="btn-ghost size-12 w-auto">
             <svg class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
                 <g clip-path="url(#clip0_655_9407)">
                 <path d="M17.5599 12C17.5599 12.4059 17.5118 12.7981 17.4328 13.1766C17.4042 13.3137 17.4687 13.4544 17.594 13.5171L21.0965 15.2683C21.2577 15.3489 21.4534 15.2703 21.5084 15.0987C21.8215 14.1226 21.9999 13.0897 21.9999 12V11.94C21.9999 11.7743 21.8656 11.64 21.6999 11.64H17.8599C17.6942 11.64 17.5599 11.7743 17.5599 11.94V12Z" fill="white" style="fill: var(--fillg);"/>
@@ -100,16 +100,28 @@
             data-tooltip="Mode sombre/clair"
             data-side="bottom"
             onclick="document.dispatchEvent(new CustomEvent('basecoat:theme'))"
-            class="btn-icon-outline"
+            class="btn-icon-outline size-12"
             >
             <span class="hidden dark:block"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg></span>
             <span class="block dark:hidden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg></span>
         </button>
-        <a href="./?p=login" class="btn-primary">
-            <svg class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#000000" d="M3 11h9.586l-3.5-3.5L10.5 6.086L16.414 12L10.5 17.914L9.086 16.5l3.5-3.5H3v-2Zm11 8.5h5v-15h-5v-2h7v19h-7v-2Z"/></svg>
-            <svg class="block dark:hidden" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#ffffff" d="M3 11h9.586l-3.5-3.5L10.5 6.086L16.414 12L10.5 17.914L9.086 16.5l3.5-3.5H3v-2Zm11 8.5h5v-15h-5v-2h7v19h-7v-2Z"/></svg>
-            <span>Connexion</span>
-        </a>
+        <?php if (isset($_SESSION['username'])) { ?>
+            <a href="./?p=logout" class="group btn-outline h-12 justify-start pr-4 md:max-w-50">
+                <img alt="<?= $_SESSION['lastname'] ?>" src="https://eu.ui-avatars.com/api/?name=<?= $_SESSION['lastname'] ?>&size=250" class="size-8 shrink-0 rounded-full">
+                <div class="grid flex-1 text-left text-sm leading-tight">
+                    <span class="truncate font-medium"><?= $_SESSION['firstname'] ?> <?= $_SESSION['lastname'] ?></span>
+                    <span data-tooltip="<?= $_SESSION['username'] ?>" data-tooltip-after="Se déconnecter" class="text-muted-foreground after:content-[attr(data-tooltip)] truncate text-xs group-hover:after:content-[attr(data-tooltip-after)]"></span>
+                </div>
+                <svg class="hidden hover:dark:block" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#000000" d="M3 11h9.586l-3.5-3.5L10.5 6.086L16.414 12L10.5 17.914L9.086 16.5l3.5-3.5H3v-2Zm11 8.5h5v-15h-5v-2h7v19h-7v-2Z"/></svg>
+                <svg class="hidden hover:block dark:hidden" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#ffffff" d="M3 11h9.586l-3.5-3.5L10.5 6.086L16.414 12L10.5 17.914L9.086 16.5l3.5-3.5H3v-2Zm11 8.5h5v-15h-5v-2h7v19h-7v-2Z"/></svg>
+            </a>
+        <?php }else{ ?>
+            <a href="./?p=login" class="btn-primary size-12 w-auto px-5">
+                <svg class="hidden dark:block" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#000000" d="M3 11h9.586l-3.5-3.5L10.5 6.086L16.414 12L10.5 17.914L9.086 16.5l3.5-3.5H3v-2Zm11 8.5h5v-15h-5v-2h7v19h-7v-2Z"/></svg>
+                <svg class="block dark:hidden" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#ffffff" d="M3 11h9.586l-3.5-3.5L10.5 6.086L16.414 12L10.5 17.914L9.086 16.5l3.5-3.5H3v-2Zm11 8.5h5v-15h-5v-2h7v19h-7v-2Z"/></svg>
+                <span>Connexion</span>
+            </a>
+        <?php } ?>
     </div>
 </nav>
 
