@@ -6,10 +6,10 @@
     if (isset($_POST['username']) && isset($_POST['password'])){
         $user = login($_POST['username'], $_POST['password']);
         if ($user){
-            $_SESSION['username'] = $user['login'];
-            $_SESSION['firstname'] = $user['prenom'];
-            $_SESSION['lastname'] = $user['nom'];
-            $_SESSION['role'] = $user['role'];
+            $_SESSION['username'] = $user[0]['login'];
+            $_SESSION['firstname'] = $user[1]['prenomMoniteur'];
+            $_SESSION['lastname'] = $user[1]['nomMoniteur'];
+            $_SESSION['role'] = $user[0]['role'];
             header("Location: ?p=home");
             exit;
         }

@@ -4,17 +4,42 @@ include "pdo.config.php";
 function login($username, $password){
     global $connexion;
 
-    $query = "SELECT * FROM connexion WHERE login = :login";
+    $query = "SELECT * FROM connexion WHERE login = ?";
     $prep = $connexion->prepare($query);
-    $prep->bindParam(':login', $username);
-    $prep->execute();
+    $prep->execute([$username]);
     $user = $prep->fetch();
 
-    if ($user && password_verify($password, $user['mdp'])) {
-        return $user;
+    $query = "SELECT * FROM moniteur WHERE numMoniteur = ?";
+    $prep = $connexion->prepare($query);
+    $prep->execute([$user['numMoniteur']]);
+    $moniteur = $prep->fetch();
+
+    if ($user && $moniteur && password_verify($password, $user['mdp'])) {
+        return [$user, $moniteur];
     } else {
         return false;
     }
+}
+
+function register($username, $password, $firstname, $lastname){
+    global $connexion;
+
+    $query = "SELECT * FROM connexion WHERE login = ?";
+    $prep = $connexion->prepare($query);
+    $prep->execute([$username]);
+    if ($prep->fetch()) {
+        return false;
+    }
+
+    $query = "INSERT INTO moniteur (nomMoniteur, prenomMoniteur) VALUES (?, ?)";
+    $prep = $connexion->prepare($query);
+    $prep->execute([$firstname, $lastname]);
+    $numMoniteur = $connexion->lastInsertId();
+
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+    $query = "INSERT INTO connexion (login, mdp, numMoniteur) VALUES (?, ?, ?)";
+    $prep = $connexion->prepare($query);
+    return $prep->execute([$username, $hashedPassword, $numMoniteur]);
 }
 
 ?>
