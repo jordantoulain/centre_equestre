@@ -6,11 +6,11 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
 
     </div>
-    <div class="text-center mt-8">
-        <a href="#" class="btn-primary">
+    <div class="flex gap-5 text-center mt-8">
+        <a href="#" class="btn-primary px-5">
             En savoir plus
         </a>
-        <a href="#" class="btn-ghost">
+        <a href="#" class="btn-ghost px-5">
             Contactez-nous
         </a>
     </div>
