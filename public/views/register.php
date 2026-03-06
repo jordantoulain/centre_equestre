@@ -32,6 +32,7 @@
             <p class="text-muted-foreground text-sm">Code fourni par le centre équestre pour permettre l'inscription d'un nouveau moniteur.</p>
         </div>
         <button type="submit" class="btn">S'inscrire</button>
+        <a href="./?p=login" class="cursor-pointer text-center text-sm">J'ai déjà un compte</a>
     </form>
     <?php if (isset($error)) { ?>
         <div class="alert-destructive w-2/3 max-w-100 mx-auto mt-6">
