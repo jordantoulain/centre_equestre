@@ -6,6 +6,7 @@
     if (isset($_POST['username']) && isset($_POST['password'])){
         $user = login($_POST['username'], $_POST['password']);
         if ($user){
+            session_regenerate_id(true);
             $_SESSION['username'] = $user[0]['login'];
             $_SESSION['firstname'] = $user[1]['prenomMoniteur'];
             $_SESSION['lastname'] = $user[1]['nomMoniteur'];
