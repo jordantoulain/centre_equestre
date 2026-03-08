@@ -4,6 +4,11 @@
     include "$root/models/authModel.php";
 
     if (isset($_POST['username']) && isset($_POST['password'])){
+
+        if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+            die("CSRF error. Try again.");
+        }
+
         $user = login($_POST['username'], $_POST['password']);
         if ($user){
             session_regenerate_id(true);

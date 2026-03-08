@@ -38,4 +38,13 @@ function controleurPrincipal($action){
     }
 }
 
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+function e($string) {
+    if ($string === null) return '';
+    return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+}
+
 ?>

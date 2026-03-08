@@ -1,5 +1,6 @@
 <section class="container flex flex-col items-center justify-center h-full w-screen m-auto">
     <form method="POST" class="form w-2/3 max-w-100 mx-auto grid gap-6">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
         <div role="group" class="field">
             <label for="username">Nom d'utilisateur</label>
             <input class="input" name="username" id="username" type="text" placeholder="nom.prenom" <?php echo isset($error) ? 'aria-invalid="true"' : ''; ?> required>

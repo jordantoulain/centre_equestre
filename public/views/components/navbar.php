@@ -107,10 +107,10 @@
         </button>
         <?php if (isset($_SESSION['username'])) { ?>
             <a href="./?p=logout" class="group btn-outline h-12 justify-start pr-4 md:max-w-50">
-                <img alt="<?= $_SESSION['lastname'] ?>" src="https://eu.ui-avatars.com/api/?name=<?= $_SESSION['lastname'] ?>&size=250" class="size-8 shrink-0 rounded-full">
+                <img alt="<?= e($_SESSION['lastname']) ?>" src="https://eu.ui-avatars.com/api/?name=<?= e($_SESSION['lastname']) ?>&size=250" class="size-8 shrink-0 rounded-full">
                 <div class="grid flex-1 text-left text-sm leading-tight">
-                    <span class="truncate font-medium capitalize"><?= $_SESSION['firstname'] ?> <?= $_SESSION['lastname'] ?></span>
-                    <span data-tooltip="<?= $_SESSION['username'] ?>" data-tooltip-after="Se déconnecter" class="text-muted-foreground after:content-[attr(data-tooltip)] truncate text-xs group-hover:after:content-[attr(data-tooltip-after)]"></span>
+                    <span class="truncate font-medium capitalize"><?= e($_SESSION['firstname']) ?> <?= e($_SESSION['lastname']) ?></span>
+                    <span data-tooltip="<?= e($_SESSION['username']) ?>" data-tooltip-after="Se déconnecter" class="text-muted-foreground after:content-[attr(data-tooltip)] truncate text-xs group-hover:after:content-[attr(data-tooltip-after)]"></span>
                 </div>
                 <svg class="hidden hover:dark:block" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#000000" d="M3 11h9.586l-3.5-3.5L10.5 6.086L16.414 12L10.5 17.914L9.086 16.5l3.5-3.5H3v-2Zm11 8.5h5v-15h-5v-2h7v19h-7v-2Z"/></svg>
                 <svg class="hidden hover:block dark:hidden" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#ffffff" d="M3 11h9.586l-3.5-3.5L10.5 6.086L16.414 12L10.5 17.914L9.086 16.5l3.5-3.5H3v-2Zm11 8.5h5v-15h-5v-2h7v19h-7v-2Z"/></svg>

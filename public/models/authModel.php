@@ -9,6 +9,10 @@ function login($username, $password){
     $prep->execute([$username]);
     $user = $prep->fetch();
 
+    if (!$user) {
+        return false;
+    }
+
     $query = "SELECT * FROM moniteur WHERE numMoniteur = ?";
     $prep = $connexion->prepare($query);
     $prep->execute([$user['numMoniteur']]);
@@ -31,15 +35,25 @@ function register($username, $password, $firstname, $lastname){
         return false;
     }
 
-    $query = "INSERT INTO moniteur (nomMoniteur, prenomMoniteur) VALUES (?, ?)";
-    $prep = $connexion->prepare($query);
-    $prep->execute([$firstname, $lastname]);
-    $numMoniteur = $connexion->lastInsertId();
+    try {
+        $connexion->beginTransaction();
 
-    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-    $query = "INSERT INTO connexion (login, mdp, numMoniteur) VALUES (?, ?, ?)";
-    $prep = $connexion->prepare($query);
-    return $prep->execute([$username, $hashedPassword, $numMoniteur]);
+        $query = "INSERT INTO moniteur (nomMoniteur, prenomMoniteur) VALUES (?, ?)";
+        $prep = $connexion->prepare($query);
+        $prep->execute([$firstname, $lastname]);
+        $numMoniteur = $connexion->lastInsertId();
+
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $query = "INSERT INTO connexion (login, mdp, numMoniteur) VALUES (?, ?, ?)";
+        $prep = $connexion->prepare($query);
+        $prep->execute([$username, $hashedPassword, $numMoniteur]);
+
+        $connexion->commit();
+        return true;
+    } catch (Exception $e) {
+        $connexion->rollBack();
+        return false;
+    }
 }
 
 ?>
