@@ -10,7 +10,8 @@ function getBreadcrumbs($action){
     $breadcrumbs = [
         "home" => ["Accueil"],
         "login" => ["Authentification", "Connexion"],
-        "register" => ["Authentification","Inscription"]
+        "register" => ["Authentification","Inscription"],
+        "logout" => ["Compte", "Déconnexion"]
     ];
     return $breadcrumbs[$action] ?? $breadcrumbs["home"];
 }
