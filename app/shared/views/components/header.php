@@ -36,5 +36,4 @@
 <body class="flex flex-col min-h-screen w-screen h-screen">
 <?php
     include "$root/../app/shared/views/components/navbar.php";
-    include "$root/../app/shared/views/components/breadcrumb.php";
 ?>

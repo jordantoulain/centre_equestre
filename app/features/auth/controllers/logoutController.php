@@ -12,9 +12,10 @@
         }
 
 
-        include "$root/../app/shared/views/components/header.php";
-        include "$root/../app/features/auth/views/logout.php";
-        include "$root/../app/shared/views/components/footer.php";
+        include_once "$root/../app/shared/views/components/header.php";
+        include_once "$root/../app/shared/views/components/breadcrumb.php";
+        include_once "$root/../app/features/auth/views/logout.php";
+        include_once "$root/../app/shared/views/components/footer.php";
     }else{
         header("Location: ?p=home");
         exit;
