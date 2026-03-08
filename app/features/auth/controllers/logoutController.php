@@ -12,9 +12,9 @@
         }
 
 
-        include "$root/views/components/header.php";
-        include "$root/views/logout.php";
-        include "$root/views/components/footer.php";
+        include "$root/../app/shared/views/components/header.php";
+        include "$root/../app/features/auth/views/logout.php";
+        include "$root/../app/shared/views/components/footer.php";
     }else{
         header("Location: ?p=home");
         exit;

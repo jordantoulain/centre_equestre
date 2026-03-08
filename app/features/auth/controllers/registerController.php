@@ -1,7 +1,7 @@
 <?php
     returnIfLoggedIn();
 
-    include "$root/models/authModel.php";
+    include "$root/../app/features/auth/models/authModel.php";
 
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['vfyPassword']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['code'])){
 
@@ -47,7 +47,7 @@
     }
     }
 
-    include "$root/views/components/header.php";
-    include "$root/views/register.php";
-    include "$root/views/components/footer.php";
+    include "$root/../app/shared/views/components/header.php";
+    include "$root/../app/features/auth/views/register.php";
+    include "$root/../app/shared/views/components/footer.php";
 ?>

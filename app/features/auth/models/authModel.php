@@ -1,5 +1,5 @@
 <?php
-include "pdo.config.php";
+include "$root/../app/shared/config/pdo.config.php";
 
 function login($username, $password){
     global $connexion;

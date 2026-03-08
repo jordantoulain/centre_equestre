@@ -32,7 +32,7 @@ function asset(string $entry) {
     return '';
 }
 
-include "$root/controllers/mainController.php";
+include "$root/../app/features/home/controllers/mainController.php";
 if (isset($_GET["p"])){
     $action = $_GET["p"];
 }else{
@@ -40,6 +40,6 @@ if (isset($_GET["p"])){
 }
 $breadcrumbs = getBreadcrumbs($action);
 $fichier = controleurPrincipal($action);
-include "$root/controllers/$fichier";
+include "$root/$fichier";
 
 ?>

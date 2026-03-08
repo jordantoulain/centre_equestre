@@ -1,7 +1,7 @@
 <?php
     returnIfLoggedIn();
 
-    include "$root/models/authModel.php";
+    include "$root/../app/features/auth/models/authModel.php";
 
     if (isset($_POST['username']) && isset($_POST['password'])){
 
@@ -24,7 +24,7 @@
         }
     }
 
-    include "$root/views/components/header.php";
-    include "$root/views/login.php";
-    include "$root/views/components/footer.php";
+    include "$root/../app/shared/views/components/header.php";
+    include "$root/../app/features/auth/views/login.php";
+    include "$root/../app/shared/views/components/footer.php";
 ?>
