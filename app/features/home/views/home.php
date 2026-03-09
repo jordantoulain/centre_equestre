@@ -11,7 +11,7 @@
         <a href="#" class="btn-primary px-5">
             En savoir plus
         </a>
-        <a href="#" class="btn-ghost px-5">
+        <a href="./?p=contact" class="btn-ghost px-5">
             Contactez-nous
         </a>
     </div>
