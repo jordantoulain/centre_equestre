@@ -8,12 +8,12 @@
         <div class="flex gap-6 flex-row">
             <div role="group" class="field">
                 <label for="lastname">Nom</label>
-                <input name="lastname" class="input" id="lastname" type="text" placeholder="Doe" required>
+                <input name="lastname" class="input" id="lastname" type="text" placeholder="Doe" <?php echo isset($_SESSION['lastname']) ? 'value="' . e($_SESSION['lastname']) . '"' : ''; ?> required>
             </div>
 
             <div role="group" class="field">
                 <label for="firstname">Prénom</label>
-                <input name="firstname" class="input" id="firstname" type="text" placeholder="John" required>
+                <input name="firstname" class="input" id="firstname" type="text" placeholder="John" <?php echo isset($_SESSION['firstname']) ? 'value="' . e($_SESSION['firstname']) . '"' : ''; ?> required>
             </div>
         </div>
         <hr role="separator">
