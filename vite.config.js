@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+import { glob } from 'glob';
+import { fileURLToPath } from 'node:url';
+import { relative } from 'node:path';
 
 export default defineConfig({
   plugins: [
@@ -10,10 +13,12 @@ export default defineConfig({
     emptyOutDir: true,
     manifest: true,
     rollupOptions: {
-      input: [
-        'src/app.css',
-        'src/index.js'
-      ]
+      input: Object.fromEntries(
+        glob.sync('src/**/*.{js,css,png,svg}').map(file => [
+          relative('src', file.slice(0, file.length - (file.endsWith('.ts') ? 3 : 3))),
+          fileURLToPath(new URL(file, import.meta.url))
+        ])
+      )
     }
   },
   server: {
