@@ -7,7 +7,7 @@
     function getBreadcrumbs($page){
         global $root;
         $breadcrumbs = require_once "$root/../app/shared/config/breadcrumbs.php";
-        return $breadcrumbs[$page] ?? '';
+        return $breadcrumbs[$page] ?? $breadcrumbs['404'];
     }
 
     function asset(string $entry) {
