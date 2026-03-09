@@ -17,13 +17,13 @@
         <hr role="separator">
         <div class="flex gap-6 flex-row">
             <div role="group" class="field">
-                <label for="firstname">Nom</label>
-                <input name="firstname" class="input" id="firstname" type="text" placeholder="Doe" required>
+                <label for="lastname">Nom</label>
+                <input name="lastname" class="input" id="lastname" type="text" placeholder="Doe" required>
             </div>
 
             <div role="group" class="field">
-                <label for="lastname">Prénom</label>
-                <input name="lastname" class="input" id="lastname" type="text" placeholder="John" required>
+                <label for="firstname">Prénom</label>
+                <input name="firstname" class="input" id="firstname" type="text" placeholder="John" required>
             </div>
         </div>
         <hr role="separator">

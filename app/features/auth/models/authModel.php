@@ -40,7 +40,7 @@ function register($username, $password, $firstname, $lastname){
 
         $query = "INSERT INTO moniteur (nomMoniteur, prenomMoniteur) VALUES (?, ?)";
         $prep = $connexion->prepare($query);
-        $prep->execute([$firstname, $lastname]);
+        $prep->execute([$lastname, $firstname]);
         $numMoniteur = $connexion->lastInsertId();
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
