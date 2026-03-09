@@ -14,7 +14,7 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       input: Object.fromEntries(
-        glob.sync('src/**/*.{js,css,png,svg}').map(file => [
+        glob.sync('src/**/*.{js,css}').map(file => [
           relative('src', file.slice(0, file.length - (file.endsWith('.ts') ? 3 : 3))),
           fileURLToPath(new URL(file, import.meta.url))
         ])
