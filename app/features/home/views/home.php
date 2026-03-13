@@ -1,4 +1,4 @@
-<section class="container mx-auto h-screen w-screen flex flex-col justify-center items-center">
+<section class="container mx-auto w-screen flex flex-col my-auto items-center">
     <img src="./images/horse.svg" alt="Image de bienvenue" class="block dark:hidden h-64 object-cover mb-8 mt-10 mx-auto">
     <img src="./images/horse2.svg" alt="Image de bienvenue" class="hidden dark:block h-64 object-cover mb-8 mt-10 mx-auto">
     <h1 class="text-4xl font-bold text-center mb-8">Bienvenue au Centre Équestre ! 👋</h1>

@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="<?= asset('src/app.css') ?>">
     <script type="module" src="<?= asset('src/index.js') ?>" defer></script>
 </head>
-<body class="flex flex-col min-h-screen w-screen h-screen">
+<body class="flex flex-col min-h-screen w-screen">
 <?php
     include "$root/../app/shared/views/components/navbar.php";
 ?>
