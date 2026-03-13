@@ -5,7 +5,8 @@ return [
         "login" => "../app/features/auth/controllers/loginController.php",
         "register" => "../app/features/auth/controllers/registerController.php",
         "logout" => "../app/features/auth/controllers/logoutController.php",
-        "contact" => "../app/features/contact/controllers/contactController.php"
+        "contact" => "../app/features/contact/controllers/contactController.php",
+        "montures" => "../app/features/horses/controllers/horsesController.php"
     ];
 ?>
 
