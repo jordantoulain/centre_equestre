@@ -13,12 +13,7 @@ export default defineConfig({
     emptyOutDir: true,
     manifest: true,
     rollupOptions: {
-      input: Object.fromEntries(
-        glob.sync('src/**/*.{js,css}').map(file => [
-          relative('src', file.slice(0, file.length - (file.endsWith('.ts') ? 3 : 3))),
-          fileURLToPath(new URL(file, import.meta.url))
-        ])
-      )
+      input: glob.sync('src/**/*.{js,css}').map(file => fileURLToPath(new URL(file, import.meta.url)))
     }
   },
   server: {
