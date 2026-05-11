@@ -7,7 +7,7 @@
             unset($_SESSION['firstname']);
             unset($_SESSION['lastname']);
             unset($_SESSION['role']);
-            header("Location: ?p=home");
+            header("Location: ./?p=home");
             exit;
         }
 
@@ -17,7 +17,7 @@
         include_once "$root/../app/features/auth/views/logout.php";
         include_once "$root/../app/shared/views/components/footer.php";
     }else{
-        header("Location: ?p=home");
+        header("Location: ./?p=home");
         exit;
     }
 ?>

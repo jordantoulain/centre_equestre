@@ -16,7 +16,7 @@
             $_SESSION['firstname'] = $user[1]['prenomMoniteur'];
             $_SESSION['lastname'] = $user[1]['nomMoniteur'];
             $_SESSION['role'] = $user[0]['role'];
-            header("Location: ?p=home");
+            header("Location: ./?p=home");
             exit;
         }
         else{

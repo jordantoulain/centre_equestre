@@ -1,6 +1,6 @@
 <section class="container mx-auto min-h-screen w-screen grid sm:grid-cols-2 lg:grid-cols-3 gap-5 py-10 justify-center items-center">
     <?php
-        foreach($horses as $horse){
+        foreach($horses as $horse){ if ($horse["numMonture"] != 0) {
             ?>
 
             <div class="card">
@@ -15,7 +15,7 @@
                 width="500"
                 height="500"
                 class="aspect-video object-cover" style="color:transparent"
-                src="<?= $horse["photoMonture"] ?>"
+                src="./uploads/<?= $horse["photoMonture"] ?>"
                 />
             </section>
             <footer class="flex items-center gap-2">
@@ -45,6 +45,6 @@
             </div>
 
             <?php
-        }
+        }}
     ?>
 </section>

@@ -1,7 +1,7 @@
 <?php
     function returnIfLoggedIn(){
         if (isset($_SESSION['username'])){
-            header("Location: ?p=home");
+            header("Location: ./?p=home");
             exit;
         }
     }

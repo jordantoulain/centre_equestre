@@ -1,3 +1,8 @@
+
+<?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
+    include_once "$root/../app/admin/views/components/command.php";
+}?>
+
 <nav class="flex p-4 w-screen justify-between">
     <button class="size-12 btn-icon-outline sm:hidden" type="button" onclick="document.dispatchEvent(new CustomEvent('basecoat:sidebar'))">
         <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3.5 5a1 1 0 0 0 0 2h17a1 1 0 1 0 0-2h-17Zm-1 7a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2h-17a1 1 0 0 1-1-1Zm0 6.001a1 1 0 0 1 1-1h17a1 1 0 1 1 0 2h-17a1 1 0 0 1-1-1Z" clip-rule="evenodd"/></svg>
@@ -28,11 +33,7 @@
             <svg class="dark:hidden" fill=currentColor height=24 viewBox="0 0 24 24"width=24 xmlns=http://www.w3.org/2000/svg><g clip-path=url(#clip0_4418_4282)><path d="M9.0002 19.0004C9.0002 19.8404 9.1302 20.6604 9.3702 21.4204C5.5302 20.0904 2.6302 16.5604 2.3302 12.4304C2.0302 8.04036 4.5602 3.94036 8.6502 2.22036C9.7102 1.78036 10.2502 2.10036 10.4802 2.33036C10.7002 2.55036 11.0102 3.08036 10.5702 4.09036C10.1202 5.13036 9.9002 6.23036 9.9002 7.37036C9.9102 9.41036 10.7102 11.3004 12.0102 12.7504C10.1802 14.2104 9.0002 16.4704 9.0002 19.0004Z"fill=currentColor style=fill:var(--fillg) /><path d="M21.21 17.72C19.23 20.41 16.09 21.99 12.74 21.99C12.58 21.99 12.42 21.98 12.26 21.97C11.26 21.93 10.29 21.74 9.37 21.42C9.13 20.66 9 19.84 9 19C9 16.47 10.18 14.21 12.01 12.75C13.48 14.4 15.59 15.47 17.92 15.57C18.55 15.6 19.18 15.55 19.8 15.44C20.92 15.24 21.37 15.66 21.53 15.93C21.7 16.2 21.88 16.79 21.21 17.72Z"fill=currentColor style=fill:var(--fillg) opacity=0.4 /></g><defs><clipPath id=clip0_4418_4282><rect fill=currentColor height=24 width=24 /></clipPath></defs></svg>
         </button>
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){ ?>
-            <a
-            href="./?p=admin"
-            data-tooltip="Interface d'administration"
-            data-side="bottom"
-            class="btn-icon-outline size-12">
+            <a href="./?p=admin" class="btn-icon-outline size-12">
                 <svg fill=none height=24 viewBox="0 0 24 24"width=24 xmlns=http://www.w3.org/2000/svg><g clip-path=url(#clip0_4418_6330)><path d="M19.3198 9.99977H4.68977C3.20977 9.99977 2.00977 8.78978 2.00977 7.31978V4.68977C2.00977 3.20977 3.21977 2.00977 4.68977 2.00977H19.3198C20.7998 2.00977 21.9998 3.21977 21.9998 4.68977V7.31978C21.9998 8.78978 20.7898 9.99977 19.3198 9.99977Z"stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.5 /><path d="M19.3198 21.9998H4.68977C3.20977 21.9998 2.00977 20.7898 2.00977 19.3198V16.6898C2.00977 15.2098 3.21977 14.0098 4.68977 14.0098H19.3198C20.7998 14.0098 21.9998 15.2198 21.9998 16.6898V19.3198C21.9998 20.7898 20.7898 21.9998 19.3198 21.9998Z"stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.5 /><path d="M6 5V7"stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.5 opacity=0.4 /><path d="M10 5V7"stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.5 opacity=0.4 /><path d="M6 17V19"stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.5 opacity=0.4 /><path d="M10 17V19"stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.5 opacity=0.4 /><path d="M14 6H18"stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.5 opacity=0.4 /><path d="M14 18H18"stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=1.5 opacity=0.4 /></g><defs><clipPath id=clip0_4418_6330><rect fill=currentColor height=24 width=24 /></clipPath></defs></svg>
             </a>
         <?php } ?>

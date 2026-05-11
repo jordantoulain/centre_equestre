@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import { glob } from 'glob';
 import { fileURLToPath } from 'node:url';
-import { relative } from 'node:path';
 
 export default defineConfig({
   plugins: [
